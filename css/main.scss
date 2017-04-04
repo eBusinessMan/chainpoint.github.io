@@ -1,4 +1,23 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+// https://github.com/Igosuki/compass-mixins
+// npm install compass-mixins
 @import 'compass';
+
+// https://github.com/twbs/bootstrap-sass
+// npm install bootstrap-sass
+@import 'bootstrap';
+
+// https://github.com/nkpfstr/quantum-colors
+// Installed manually to _sass/
+@import 'quantum-colors/quantum-colors';
+
+// https://github.com/nkpfstr/quantum-shadows
+// Installed manually to _sass/
+@import 'quantum-shadows/quantum-shadows';
 
 //
 // Utilities
@@ -161,9 +180,6 @@ header {
   }
 }
 
-
-
-
 //
 // Standard Content Modules
 // --------------------------------------------------
@@ -200,7 +216,6 @@ h1 {
     color: #fff;
   }
 }
-
 
 //
 // Standard Form

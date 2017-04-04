@@ -1,0 +1,20 @@
+{
+  "name": "quantum-colors",
+  "version": "1.2.0",
+  "homepage": "https://github.com/nickpfisterer/quantum-colors",
+  "authors": [
+    "Nick Pfisterer <hello@nickp.co>"
+  ],
+  "description": "Use the color palette from Google's Material Design spec in your Sass projects.",
+  "main": "_quantum-colors.scss",
+  "ignore": [
+    "sache.json"
+  ],
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "colors"
+  ],
+  "license": "MIT"
+}

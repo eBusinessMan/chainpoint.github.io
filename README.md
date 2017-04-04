@@ -4,16 +4,27 @@ This is a [Jekyll](https://jekyllrb.com/docs/quickstart/) [Github pages](https:/
 
 ### Development
 
+Install Yarn and `node_modules` dependencies
+
+```
+brew install yarn
+yarn
+```
+
+Install/Update gem dependencies
+
 ```
 bundle install
 bundle update
+```
+
+Start the local Jekyll dev server, recompiling all assets on change
+
+```
 bundle exec jekyll serve --config _config.yml --safe --watch --profile --incremental
 ```
 
 ### Deployment
 
-#### Github
-
-```
-git push
-```
+Merge work in progress to `master` branch and `git push`.
+Github pages will deploy almost instantly.
