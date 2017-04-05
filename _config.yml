@@ -24,6 +24,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tierion
 github_username:  chainpoint
 
+# store static markdown pages in _pages/
+include: ['_pages']
+relative_permalinks: false
+
 # Build settings
 markdown: kramdown
 exclude:
