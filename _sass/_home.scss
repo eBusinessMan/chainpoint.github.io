@@ -63,9 +63,14 @@
     text-align: left;
     h2 {
       margin-top: 0;
-      margin-bottom: 60px;
+      margin-bottom: 10px;
       color: $deep-orange-500;
       text-align: left;
+    }
+    small {
+      display: block;
+      font-style: italic;
+      color: $grey-500;
     }
   }
 
@@ -82,6 +87,13 @@
       max-width: 680px;
       font-size: 1.429em;
       line-height: 1.8em;
+    }
+  }
+  .table-section-header {
+    .required {
+      font-style: italic;
+      font-weight: 400;
+      color: $grey-500;
     }
   }
 }

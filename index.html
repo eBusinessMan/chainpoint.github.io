@@ -7,11 +7,8 @@ layout: default
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>Chainpoint is the open standard specification for creating a
-                        universally verifiable proof of existence for any data, file, or series of events.</h1>
-                    <h2>Chainpoint Proofs anchor a virtually unlimited amount of data to any number of blockchains.
-                        With a proof, and a copy of the original data, anyone can cryptographically verify
-                        its integrity and existence at a point in time.</h2>
+                    <h1>Chainpoint is an open standard for creating a timestamp proof of any data, file, or series of events.</h1>
+                    <h2>Anchor an unlimited amount of data to multiple blockchains. Verify the integrity and existence of data without relying on a trusted third-party.</h2>
                     <br>
                     <div class="diagram-wrap"><img src="../images/diagram@2x.png" class="img-responsive diagram"></div>
                 </div>
@@ -28,14 +25,8 @@ layout: default
             <div class="row">
                 <div class="col-sm-12">
                     <h2>How does <span>Chainpoint</span> work?</h2>
-                    <p class="subhead">Chainpoint compliant services accept hashes created by a
-                        <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" target="_blank">cryptographic hash function</a>.
-                        Hashes uniquely represent a document or a piece of data at a point in time. The service aggregates many
-                        incoming hashes together using a <a href="https://en.wikipedia.org/wiki/Merkle_tree" target="_blank">Merkle tree</a>.
-                        The single hash at the root of the Merkle tree, or roots of trees in a hierarchy, can be embedded
-                        on any number of blockchains as <strong>trust anchors</strong>. Once anchored, they become immutable
-                        and ever more secure as the blockchain grows. From these operations a
-                        <strong>Chainpoint Proof</strong> can be created.</p>
+                    <p> Chainpoint links a <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" target="_blank">hash</a> of your data to the blockchain and returns a timestamp proof. A Chainpoint service receives hashes. These hashes are aggregated using a <a href="https://en.wikipedia.org/wiki/Merkle_tree" target="_blank">Merkle tree</a>. The root of this tree is anchored in the Bitcoin and Ethereum blockchain. Throughout this process a <strong>Chainpoint proof</strong> is created and continually upgraded.  The final Chainpoint proof defines a path of operations that cryptographically links your data to the blockchain.
+                    </p>
                 </div>
             </div>
         </div>
@@ -47,15 +38,8 @@ layout: default
                 <div class="col-sm-12">
                     <h2>What is a <span>Chainpoint Proof?</span></h2>
                     <p class="subhead">
-                        A proof is a <a href="http://json-ld.org/" target="_blank">JSON-LD</a>
-                        document, that can optionally be signed, that contains all the
-                        information necessary to cryptographically verify that a piece of data
-                        is anchored to a blockchain. It proves the data existed, unchanged from
-                        its current form, at the point in time when it was anchored. Proofs
-                        can be verified without reliance on any single trusted third party.</p>
+                        A proof is a <a href="http://json-ld.org/" target="_blank">JSON-LD</a> document, that contains the information to cryptographically verify a piece of data is anchored to a blockchain. It proves the data existed at the point in time when it was anchored. Chainpoint proofs can be verified without reliance on a trusted third party.</p>
                     <br>
-                    <p class="subhead">The third major version of the Chainpoint proof specification is
-                        currently in testing and scheduled for release soon.</p>
                     <img src="../images/whitepaper@2x.png" class="img-responsive whitepaper">
                 </div>
             </div>
@@ -67,6 +51,7 @@ layout: default
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Chainpoint Proof Versions</h2>
+                    <p class="subhead">The third major version of the Chainpoint proof specification is currently in testing and scheduled for release soon.</p>
                     <div class="docs docs-content">
                         <ul class="nav nav-tabs">
                             <li class="nav active"><a href="#v3x" data-toggle="tab">Version 3.0 (Beta)</a></li>
@@ -86,68 +71,68 @@ layout: default
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>@context<br/>[string, required]</td>
-                                            <td>the URI location of the JSON-LD context for the proof ("https://w3id.org/chainpoint/v3")</td>
+                                            <td>@context<br/><small>string, required</small></td>
+                                            <td>the JSON-LD context for the proof</td>
                                         </tr>
                                         <tr>
-                                            <td>type<br/>[string, required]</td>
-                                            <td>the JSON-LD type definition ('Chainpoint')</td>
+                                            <td>type<small>string, required</small></td>
+                                            <td>the JSON-LD type definition</td>
                                         </tr>
                                         <tr>
-                                            <td>hash<br/>[string, required]</td>
-                                            <td>an even length Hexadecimal hash value of the hash to be anchored between 40 (20 Bytes, 160 bits) and 128 (64 Bytes, 512 bits) hex characters in length.</td>
+                                            <td>hash<small>string, required</small></td>
+                                            <td>hash value between 40 and 128 hex characters. Must be even length.</td>
                                         </tr>
                                         <tr>
-                                            <td>hash_id<br/>[string, required]</td>
-                                            <td>a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_1_.28date-time_and_MAC_address.29" target="_blank">Version 1 UUID</a> with embedded Timestamp and random MAC used for tracking processing of the hash. Timestamp represents server time (UTC) hash was submitted at.</td>
+                                            <td>hash_id<small>string, required</small></td>
+                                            <td>a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_1_.28date-time_and_MAC_address.29" target="_blank">Version 1 UUID</a> with embedded timestamp. Random number used as MAC input. Timestamp represents server time (UTC) of hash submission.</td>
                                         </tr>
                                         <tr>
-                                            <td>hash_submitted_at<br/>[string, required]</td>
-                                            <td>Human friendly <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> formatted timestamp representing when the hash was submitted (extracted from time embedded in the hash_id)</td>
+                                            <td>hash_submitted_at<small>string, required</small></td>
+                                            <td>Human readable <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> timestamp extracted from time embedded in the hash_id</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2" class="table-section-header">branches (required only at root) - an array of branch objects. branches can be nested without limit and MUST be traversed only after any 'ops'.</td>
+                                            <td colspan="2" class="table-section-header">branches - an array of branch objects. Branches can be nested without limit and MUST be traversed only after executing 'ops'. <span class="required">(required only at root)</span></td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>label<br/>[string, optional]</td>
-                                            <td>any optional arbitrary text string representing this branch name [a-zA-Z0-9_-.]</td>
+                                            <td>label<small>string, optional</small></td>
+                                            <td>text string representing the branch name</td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>ops<br/>[array, optional]</td>
-                                            <td>an array of operations objects. operations will be performed in sequence to arrive at a new intermediate hash prior to entering a (optional) nested branch.</td>
+                                            <td>ops<small>array, optional</small></td>
+                                            <td>an array of operations objects. Operations are performed in sequence to arrive at an intermediate hash prior to entering a nested branch.</td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>branches<br/>[array, optional]</td>
-                                            <td>optional nested array of branch objects, each containing optional 'label', required 'ops', and optional additional nested 'branches'.</td>
+                                            <td>branches<small>array, optional</small></td>
+                                            <td>nested array of branch objects. Each branch contains ops; labels and additional nested branches are optional.</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2" class="table-section-header">ops (required under every 'branches' object) - an array of operation objects, each of which can have the following attributes</td>
+                                            <td colspan="2" class="table-section-header">ops - an array of operation objects <span class="required">(required under every 'branches' object)</span> </td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>l<br/>[string, optional]</td>
-                                            <td>an even length Hexadecimal string representation of a binary hash value [a-f0-9] concatenated to the left</td>
+                                            <td>l<small>string, optional</small></td>
+                                            <td>left concatenate a hexadecimal string representation of a binary hash value</td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>r<br/>[string, optional]</td>
-                                            <td>an even length Hexadecimal string representation of a binary hash value [a-f0-9] concatenated to the right</td>
+                                            <td>r<small>string, optional</small></td>
+                                            <td>right concatenate a hexadecimal string representation of a binary hash value</td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>op<br/>[string, optional]</td>
-                                            <td>a hashing operation to perform on the current value combined with a previous 'l' or 'r' operation. Can be one of: 'sha-224', 'sha-256', 'sha-384', 'sha-512', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512', or the special purpose 'sha-256-x2' which applies 'sha-256' twice.</td>
+                                            <td>op<small>string, optional</small></td>
+                                            <td>an operation to perform on the current value combined with a previous 'l' or 'r' operation. Current operations: 'sha-224', 'sha-256', 'sha-384', 'sha-512', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512', or the special purpose 'sha-256-x2' which applies 'sha-256' twice.</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2" class="table-section-header">anchors (required under every 'ops' object) - an array of anchor objects, each of which can have the following attributes.</td>
+                                            <td colspan="2" class="table-section-header">anchors - an array of anchor objects <span class="required">(required under every 'ops' object).</span></td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>type<br/>[string, required]</td>
+                                            <td>type<small>string, required</small></td>
                                             <td>one of 'cal' (Calendar), 'btc' (Bitcoin), or 'eth' (Ethereum) anchor types</td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>anchor_id<br/>[string, required]</td>
-                                            <td>a unique, in the context of the anchor type, identifier a human can use to look up embedded anchor data. e.g. a Bitcoin transaction or block ID.</td>
+                                            <td>anchor_id<small>string, required</small></td>
+                                            <td>an identifier used to look up embedded anchor data. e.g. a Bitcoin transaction or block ID.</td>
                                         </tr>
                                         <tr class="sublevel">
-                                            <td>uris<br/>[array, optional]</td>
+                                            <td>uris<small>array, optional</small></td>
                                             <td>an array of special purpose string URI's, each of which can be used to lookup and retrieve the exact hash resource required to validate this anchor. The URI MUST return only a Hexadecimal hash value as a string. The URI MUST also contain the 'anchor_id' value to lookup the URI resource. This strict requirement is to allow automated clients to retrieve and validate intermediate hashes when verifying a proof. The body value returned by the URI MUST be of even length and match the regex [a-fA-F0-9].</td>
                                         </tr>
                                     </tbody>
@@ -339,15 +324,7 @@ layout: default
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Verifying <span>Chainpoint Proofs</span></h2>
-                    <p class="subhead">Verification confirms that a proof is <strong>well formed</strong>
-                       and that all proof operations lead to the expected trust anchor hash. If the hash of
-                       the original data, the proof, and the trust anchor all tie together then anyone
-                       can be assured that your proof is valid and your data is an exact match
-                       to that provided at the time of proof creation.</p>
-                    <br>
-                    <p class="subhead">Verification of current version 2.x proofs can be performed with the official
-                       <a href="https://www.npmjs.com/package/chainpoint-validate" target="_blank">chainpoint-validate</a>
-                       Javascript package for Node.js.</p>
+                    <p class="subhead">Verification confirms that the proof is well formatted, and all proof operations lead to the expected anchor hash. Verification of current version 2.x proofs can be performed with the <a href="https://www.npmjs.com/package/chainpoint-validate" target="_blank">chainpoint-validate</a> Javascript package for Node.js.</p>
                 </div>
             </div>
         </div>
