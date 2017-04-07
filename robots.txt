@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /images
+Allow: /contexts
+Allow: /samples
+Allow: /
+
+Disallow: /node_modules
+Disallow: /css
