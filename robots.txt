@@ -1,8 +1,4 @@
 User-agent: *
-Allow: /images
-Allow: /contexts
-Allow: /samples
 Allow: /
 
 Disallow: /node_modules
-Disallow: /css
