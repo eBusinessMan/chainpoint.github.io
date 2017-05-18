@@ -7,14 +7,27 @@
       font-weight: 300;
       font-size: 1.714em;
     }
-    .diagram-wrap {
-      margin: 40px auto 0;
-      max-width: 939px;
-    }
+  }
+
+  .diagram-wrap {
+    margin: 40px auto 0;
+    max-width: 939px;
   }
 
   .feature-github {
     background-color: $deep-orange-500;
+    padding: 60px 0;
+    color: #fff;
+    .diagram-wrap {
+      padding: 20px 40px;
+    }
+    h4, p {
+      opacity: .5;
+    }
+    h4 {
+      margin-top: 0;
+      text-transform: uppercase;
+    }
   }
 
   section.proof-works {
