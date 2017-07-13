@@ -8,8 +8,10 @@
     "btc": "cp:btc",
     "eth": "cp:eth",
     "hash": "cp:hash",
-    "hash_id": "cp:hash_id",
-    "hash_submitted_at": "cp:hash_submitted_at",
+    "hash_id_node": "cp:hash_id_node",
+    "hash_submitted_node_at": "cp:hash_submitted_node_at",
+    "hash_id_core": "cp:hash_id_core",
+    "hash_submitted_core_at": "cp:hash_submitted_core_at",
     "branches": {
       "@id": "cp:branches",
       "@container": "@list"
